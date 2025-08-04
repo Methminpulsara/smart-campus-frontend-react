@@ -5,7 +5,7 @@ import './index.css'
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
       />
       {/* Loging navigate  */}
       <Route path="/login" element ={<Login/>} />
-      
+
     </Routes>
     </BrowserRouter>
     
