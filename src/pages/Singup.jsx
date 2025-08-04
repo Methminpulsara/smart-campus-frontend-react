@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Signup( ) {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ function Signup( ) {
     confirmPassword: '',
     role: 'student'
   });
+
   const [isLoading, setIsLoading] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState(0);
 
@@ -102,10 +104,10 @@ function Signup( ) {
             </div>
 
             {/* Name Fields */}
-            <div className="grid grid-cols-2 gap-4">
+            
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Name
+                   Name
                 </label>
                 <input
                   name="firstName"
@@ -117,7 +119,6 @@ function Signup( ) {
                 />
               </div>
         
-            </div>
 
             {/* Email Field */}
             <div>
@@ -249,12 +250,10 @@ function Signup( ) {
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{' '}
-              <button 
-              
-                className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
-              >
+              <Link to={'/login'} 
+                className="font-medium text-blue-600 hover:text-blue-500 transition-colors">
                 Sign in here
-              </button>
+              </Link>
             </p>
           </div>
         </div>
