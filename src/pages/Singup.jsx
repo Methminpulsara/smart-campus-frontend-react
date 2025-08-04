@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Signup( ) {
   const [formData, setFormData] = useState({
-   name:'',
+     name:'',
     email: '',
     password: '',
     confirmPassword: '',
@@ -15,17 +15,45 @@ function Signup( ) {
   const [passwordStrength, setPasswordStrength] = useState(0);
 
   const handlNext = () =>{
+
+    const {name , email , password , confirmPassword } = formData
+
+
+    if(!name || !email || !password || !confirmPassword ){
+        alert("fileds are required ! ");
+        return;
+    }
+
+
     if(formData.password !== formData.confirmPassword){
         alert("password do not match !")
     }
 
-    setStep(2);
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailPattern.test(email)){
+        alert("invalid User name or password ! ")
+        return;
+    }
+
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false);
+        setStep(2);
+    }, 2000);
+    
   } 
 
 
   const finalSubmit =(e)=>{
     e.preventDefault();
     console.log("final submitted data", formData)
+
+    setIsLoading(true)
+
+    setTimeout(() => {
+      setIsLoading(false);
+    
+    }, 2000);
   }
 
 
@@ -86,7 +114,7 @@ function Signup( ) {
         <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8">
           <div className="space-y-6">
         
-    {step ==1 && (
+     {step ==1 && (
         <>  
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-3">
@@ -110,18 +138,17 @@ function Signup( ) {
               </div>
             </div>
 
-            
-              <div>
+            <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                   Name
+                  Last Name
                 </label>
                 <input
-                  name="firstName"
+                  name="name"
                   type="text"
                   value={formData.name}
                   onChange={handleChange}
                   className="block w-full px-3 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all bg-gray-50 focus:bg-white"
-                  placeholder="John"
+                  placeholder="Doe"
                 />
               </div>
         
@@ -231,6 +258,14 @@ function Signup( ) {
         </>
 
     )}
+
+
+
+
+
+
+
+
 
 
             
