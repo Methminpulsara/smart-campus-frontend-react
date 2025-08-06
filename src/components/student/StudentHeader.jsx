@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function StudentHeader() {
-   const [currentTime, setCurrentTime] = useState(new Date());
+ const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
