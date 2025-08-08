@@ -7,12 +7,8 @@ function StudentSidebar() {
   const menuItems = [
     { name: 'Dashboard', icon: '⚡', path: '/dashboard', badge: null },
     { name: 'Courses', icon: '🎓', path: '/courses', badge: '5' },
-    { name: 'Schedule', icon: '📅', path: '/schedule', badge: null },
-    { name: 'Assignments', icon: '📝', path: '/assignments', badge: '3' },
-    { name: 'Grades', icon: '📊', path: '/grades', badge: null },
-    { name: 'Library', icon: '📚', path: '/library', badge: null },
-    { name: 'Messages', icon: '💬', path: '/messages', badge: '12' },
-    { name: 'Settings', icon: '⚙️', path: '/settings', badge: null },
+     { name: 'Attendance', icon: '⚡', path: '/attendance', badge: null },
+    { name: 'Log out ', icon: '🎓', path: '/login', badge: '5' },
   ];
 
   return (
