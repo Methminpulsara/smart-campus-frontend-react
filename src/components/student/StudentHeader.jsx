@@ -10,7 +10,6 @@ function StudentHeader() {
   []
 );
 
-
   return (
     <header className="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-40">
       <div className="px-8 py-6">
