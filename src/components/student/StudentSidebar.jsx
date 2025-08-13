@@ -4,7 +4,6 @@ function StudentSidebar() {
   const [activeItem, setActiveItem] = useState('Dashboard');
   const [isCollapsed, setIsCollapsed] = useState(false);
   
-
   const menuItems = [
     { name: 'Dashboard', icon: '⚡', path: '/dashboard', badge: null },
     { name: 'Courses', icon: '🎓', path: '/courses', badge: '5' },
@@ -12,7 +11,6 @@ function StudentSidebar() {
     { name: 'Log out ', icon: '🎓', path: '/login', badge: '5' },
   ];
 
-  
   return (
     <div className={`${isCollapsed ? 'w-16' : 'w-64'} bg-gray-900/95 backdrop-blur-xl border-r border-gray-800/50 transition-all duration-500 ease-in-out fixed left-0 top-0 h-full z-50`}>
       {/* Glassmorphism overlay */}
